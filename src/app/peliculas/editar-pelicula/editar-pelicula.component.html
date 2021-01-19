@@ -1,0 +1,21 @@
+<h2> Editar Película </h2>
+
+<app-lista-errores
+    *ngIf="criticalError && !generosNoSeleccionados"
+    [criticalError]="criticalError"
+    [errores]="errores">
+</app-lista-errores>
+
+<app-form-peliculas
+    *ngIf="modelo"  
+    (sendForm)="guardarCambios($event)"
+    [modelo]="modelo"
+    [cinesNoSeleccionados]="cinesNoSeleccionados"
+    [cinesSeleccionados]="cinesSeleccionados"
+    [generosNoSeleccionados]="generosNoSeleccionados"
+    [generosSeleccionados]="generosSeleccionados"
+    [actoresSeleccionados]="actoresSeleccionados"
+  >
+</app-form-peliculas>
+
+<mat-spinner *ngIf="!modelo" ></mat-spinner>

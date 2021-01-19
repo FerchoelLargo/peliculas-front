@@ -1,0 +1,20 @@
+<div class="contenedor" >
+  <ul>
+    <li *ngFor="let item of itemsNoElegidos;let index = index" (click)="check(item,index)" >
+      {{item.value}}
+    </li>
+  </ul>
+
+  <div class="div-botones">
+    <button type="button" (click)="checkAll()" > >> </button>
+    <button type="button" (click)="unCheckAll()" > << </button>
+
+  </div>
+
+  <ul>
+    <li *ngFor="let item of itemsElegidos;let index = index" (click)="unCheck(item,index)" >
+      {{item.value}}
+    </li>
+  </ul>
+
+</div>

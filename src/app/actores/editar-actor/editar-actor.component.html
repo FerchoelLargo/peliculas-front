@@ -1,0 +1,11 @@
+<h2> Editar Actor </h2>
+<app-formulario-actores
+  *ngIf="modelo"
+  (sendForm)="guardarCambios($event)"
+  [modelo]="modelo"
+  [errores]="errores"
+  [criticalError]="criticalError"
+  >
+</app-formulario-actores>
+
+<mat-spinner *ngIf="!modelo" ></mat-spinner>

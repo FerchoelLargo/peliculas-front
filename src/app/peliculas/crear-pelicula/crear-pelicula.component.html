@@ -1,0 +1,19 @@
+<h2> Crear Película </h2>
+
+<app-lista-errores
+    *ngIf="criticalError && !generosNoSeleccionados"
+    [criticalError]="criticalError"
+    [errores]="errores">
+</app-lista-errores>
+
+<app-form-peliculas
+  *ngIf="generosNoSeleccionados"
+  [generosNoSeleccionados]="generosNoSeleccionados"
+  [cinesNoSeleccionados]="cinesNoSeleccionados"
+  (sendForm)="guardarCambios($event)"
+  [errores]="errores"
+  [criticalError]="criticalError"
+  >  </app-form-peliculas>
+
+
+  <mat-spinner *ngIf="!generosNoSeleccionados" ></mat-spinner>
